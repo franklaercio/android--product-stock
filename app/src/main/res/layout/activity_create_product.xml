@@ -6,111 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".activities.CreateProductActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/editTextCode"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="Código do Produto"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Nome do Produto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCode" />
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Descrição do Produto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:layout_height="61dp"
-                app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+    <EditText
+        android:id="@+id/editTextQuantity"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Estoque do Produto"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
-                app:toolbarId="@+id/toolbar">
+    <Button
+        android:id="@+id/btnSaveProduct"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:onClick="validate"
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Market"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textColorHighlight="@color/white"
-                    android:textColorLink="@color/white"
-                    android:textSize="24sp" />
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="779dp">
-
-            <EditText
-                android:id="@+id/editTextCode"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
-                android:hint="Código do Produto"
-                android:inputType="number"
-                app:layout_constraintBottom_toTopOf="@+id/editTextName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <EditText
-                android:id="@+id/editTextName"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:hint="Nome do Produto"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextCode" />
-
-            <EditText
-                android:id="@+id/editTextDescription"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:hint="Descrição do Produto"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextName" />
-
-            <EditText
-                android:id="@+id/editTextQuantity"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:hint="Estoque do Produto"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
-
-            <Button
-                android:id="@+id/btnSaveProduct"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:onClick="validate"
-                android:text="Salvar"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextQuantity"
-                app:layout_constraintVertical_bias="0.685" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/philosopher"
+        android:text="Cadastrar Produto"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
